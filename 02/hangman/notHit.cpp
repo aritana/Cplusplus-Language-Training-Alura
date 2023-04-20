@@ -4,8 +4,8 @@
 
 using namespace std;
 
-string secretWord;
-map<char, bool> guessed;
+extern string secretWord;
+extern map<char, bool> guessed;
 
 bool notHit()
 {

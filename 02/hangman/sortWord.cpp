@@ -3,7 +3,7 @@
 #include "readFile.hpp"
 #include "sortWord.hpp"
 
-std::string secretWord;
+extern std::string secretWord;
 void sortWord()
 {
     std::vector<std::string> wordsFromFile = readFile();

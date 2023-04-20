@@ -1,7 +1,7 @@
 #include <vector>
 #include "notHanged.hpp"
 
-std::vector<char> wrongGuesses;
+extern std::vector<char> wrongGuesses;
 
 bool notHanged()
 {

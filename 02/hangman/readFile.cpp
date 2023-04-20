@@ -2,7 +2,6 @@
 #include <iostream>
 #include "readFile.hpp"
 
-
 std::vector<std::string> readFile()
 {
     std::ifstream file("words.txt");

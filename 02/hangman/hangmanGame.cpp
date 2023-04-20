@@ -19,8 +19,7 @@
 
 using namespace std;
 
-
-string secretWord = "MELANCIA";
+string secretWord;
 map<char, bool> guessed;
 vector<char> wrongGuesses;
 

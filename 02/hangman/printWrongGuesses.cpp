@@ -2,7 +2,7 @@
 #include <iostream>
 #include "printWrongGuesses.hpp"
 
-std::vector<char> wrongGuesses;
+extern std::vector<char> wrongGuesses;
 
 void printWrongGuesses()
 {
@@ -11,6 +11,5 @@ void printWrongGuesses()
     {
         std::cout << letter << " ";
     }
-
     std::cout << std::endl;
 }

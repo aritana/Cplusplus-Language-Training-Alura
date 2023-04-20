@@ -4,8 +4,8 @@
 #include "letterExists.hpp"
 #include "guessing.hpp"
 
-std::vector<char> wrongGuesses;
-std::map<char, bool> guessed;
+extern std::vector<char> wrongGuesses;
+extern std::map<char, bool> guessed;
 
 void guessing(char guess)
 {

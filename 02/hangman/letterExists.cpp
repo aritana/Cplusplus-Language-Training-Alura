@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string secretWord;
+extern string secretWord;
 bool letterExists(char guess)
 {
     for (char letter : secretWord)
