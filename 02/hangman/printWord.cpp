@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include "printHeader.hpp"
 
 std::string secretWord;
 std::map<char, bool> guessed;

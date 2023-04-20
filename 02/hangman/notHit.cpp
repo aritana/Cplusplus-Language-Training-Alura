@@ -1,5 +1,7 @@
 #include <string>
 #include <map>
+#include "notHit.hpp"
+
 using namespace std;
 
 string secretWord;

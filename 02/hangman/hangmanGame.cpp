@@ -5,68 +5,24 @@
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
-#include "letterExists.cpp"
-#include "notHit.cpp"
-#include "notHanged.cpp"
-#include "printHeader.cpp"
-#include "printWrongGuesses.cpp"
-#include "printWord.cpp"
-#include "guessing.cpp"
-#include  "saveFile.cpp"
+#include "letterExists.hpp"
+#include "notHit.hpp"
+#include "notHanged.hpp"
+#include "printHeader.hpp"
+#include "printWrongGuesses.hpp"
+#include "printWord.hpp"
+#include "guessing.hpp"
+#include "saveFile.hpp"
+#include "readFile.hpp"
+#include "writeFile.hpp"
+#include "sortWord.hpp"
 
 using namespace std;
 
-void saveFile(vector<string> newListWords);
 
 string secretWord = "MELANCIA";
 map<char, bool> guessed;
 vector<char> wrongGuesses;
-
-vector<string> readFile()
-{
-    ifstream file("words.txt");
-    vector<string> wordsFromFile;
-
-    if (file.is_open())
-    {
-        while (file.good())
-        {
-            string word;
-            file >> word;
-            wordsFromFile.push_back(word);
-        }
-    }
-    else
-    {
-        // show message:
-        cout << "Error opening file" << endl;
-        file.close();
-        exit(0);
-    }
-    file.close();
-    return wordsFromFile;
-}
-
-void writeFile()
-{
-    string word;
-    cout << "Digite uma nova palavra:";
-    cin >> word;
-
-    vector<string> listWords = readFile();
-    listWords.push_back(word);
-
-    saveFile(listWords);
-}
-
-
-void sortWord()
-{
-    vector<string> wordsFromFile = readFile();
-    srand(time(NULL));
-    int rafledIndex = rand() % wordsFromFile.size();
-    secretWord = wordsFromFile[rafledIndex];
-}
 
 int main()
 {

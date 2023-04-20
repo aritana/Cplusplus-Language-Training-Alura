@@ -1,4 +1,5 @@
 #include <vector>
+#include "notHanged.hpp"
 
 std::vector<char> wrongGuesses;
 

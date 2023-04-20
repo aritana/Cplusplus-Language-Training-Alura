@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include "printWrongGuesses.hpp"
 
 std::vector<char> wrongGuesses;
 
