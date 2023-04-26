@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include "letterExists.hpp"
 #include "notHit.hpp"
-#include "notHanged.hpp"
 #include "printHeader.hpp"
 #include "printWrongGuesses.hpp"
 #include "printWord.hpp"
@@ -27,23 +26,20 @@ int main()
 {
     printHeader();
 
-    sortWord();
-    while (notHit() && notHanged())
+    secretWord = sortWord();
+    while (notHit(secretWord, guessed) && wrongGuesses.size() < 5)
     {
-        printWrongGuesses();
-        printWord();
+        printWrongGuesses(wrongGuesses);
+        printWord(secretWord, guessed);
 
-        char guess;
-        cout << "What is you guess? ";
-        cin >> guess;
-        guessing(guess);
+        guessing(&guessed, &wrongGuesses);
     }
 
     cout << "*****************************" << endl;
     cout << "**********End Game***********" << endl;
     cout << "*****************************" << endl;
 
-    if (notHit())
+    if (notHit(secretWord, guessed) && wrongGuesses.size() < 5)
     {
         cout << "You lose" << endl;
     }

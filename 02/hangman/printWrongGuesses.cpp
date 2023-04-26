@@ -2,9 +2,7 @@
 #include <iostream>
 #include "printWrongGuesses.hpp"
 
-extern std::vector<char> wrongGuesses;
-
-void printWrongGuesses()
+void printWrongGuesses(std::vector<char> wrongGuesses)
 {
     std::cout << "Chutes errados: ";
     for (char letter : wrongGuesses)

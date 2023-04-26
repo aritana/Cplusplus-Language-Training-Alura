@@ -1,17 +1,10 @@
-#include <string>
-#include <map>
 #include "notHit.hpp"
 
-using namespace std;
-
-extern string secretWord;
-extern map<char, bool> guessed;
-
-bool notHit()
+bool notHit(std::string &secretWord, std::map<char, bool> &guessed) // referencia
 {
     for (char letter : secretWord)
     {
-        if (!guessed[letter])
+        if (!guessed[letter]) // nao preciso dereferenciar o pointero, pois passamos a referencia
         {
             return true;
         }

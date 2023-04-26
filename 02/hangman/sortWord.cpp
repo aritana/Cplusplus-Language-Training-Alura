@@ -3,11 +3,12 @@
 #include "readFile.hpp"
 #include "sortWord.hpp"
 
-extern std::string secretWord;
-void sortWord()
+
+std::string sortWord()
 {
     std::vector<std::string> wordsFromFile = readFile();
     srand(time(NULL));
     int rafledIndex = rand() % wordsFromFile.size();
-    secretWord = wordsFromFile[rafledIndex];
+    
+    return wordsFromFile[rafledIndex];
 }

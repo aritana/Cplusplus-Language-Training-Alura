@@ -4,10 +4,7 @@
 #include <map>
 #include "printHeader.hpp"
 
-extern std::string secretWord;
-extern std::map<char, bool> guessed;
-
-void printWord()
+void printWord(std::string secretWord, std::map<char, bool> guessed)
 {
     for (char letter : secretWord)
     {
