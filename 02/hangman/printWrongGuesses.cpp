@@ -2,7 +2,7 @@
 #include <iostream>
 #include "printWrongGuesses.hpp"
 
-void printWrongGuesses(std::vector<char> wrongGuesses)
+void HangMan::printWrongGuesses(const std::vector<char> wrongGuesses)
 {
     std::cout << "Chutes errados: ";
     for (char letter : wrongGuesses)

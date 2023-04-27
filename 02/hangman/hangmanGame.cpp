@@ -5,7 +5,6 @@
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
-#include "letterExists.hpp"
 #include "notHit.hpp"
 #include "printHeader.hpp"
 #include "printWrongGuesses.hpp"
@@ -18,9 +17,9 @@
 
 using namespace std;
 
-string secretWord;
-map<char, bool> guessed;
-vector<char> wrongGuesses;
+string secretWord; // static, private from extern.
+static map<char, bool> guessed;
+static vector<char> wrongGuesses;
 
 int main()
 {
@@ -29,10 +28,10 @@ int main()
     secretWord = sortWord();
     while (notHit(secretWord, guessed) && wrongGuesses.size() < 5)
     {
-        printWrongGuesses(wrongGuesses);
+        HangMan::printWrongGuesses(wrongGuesses);
         printWord(secretWord, guessed);
 
-        guessing(&guessed, &wrongGuesses);
+        guessing(guessed, wrongGuesses);
     }
 
     cout << "*****************************" << endl;

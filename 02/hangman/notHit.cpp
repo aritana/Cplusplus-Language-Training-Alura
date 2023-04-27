@@ -1,10 +1,10 @@
 #include "notHit.hpp"
 
-bool notHit(std::string &secretWord, std::map<char, bool> &guessed) // referencia
+bool notHit(std::string &secretWord, const std::map<char, bool> &guessed) // referencia
 {
     for (char letter : secretWord)
-    {
-        if (!guessed[letter]) // nao preciso dereferenciar o pointero, pois passamos a referencia
+    { 
+        if (guessed.find(letter) == guessed.end() || !guessed.at(letter)) // não encontrou ou se encontrou, o valor é falso
         {
             return true;
         }
