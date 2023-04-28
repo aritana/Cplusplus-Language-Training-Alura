@@ -1,12 +1,19 @@
 #include <iostream>
 #include "Account.hpp"
 
-Account::Account(std::string accountNumber, std::string cpfHolder, std::string nameHolder)
+int Account::numberOfAccounts = 0; // variáveis estáticas devem ser inicializadas na implementaçao.
+
+Account::Account(std::string accountNumber, Holder holder)
+    : accountNumber(accountNumber),
+      holder(holder),
+      balance(0)
 {
-    this->accountNumber = accountNumber;
-    this->cpfHolder = cpfHolder;
-    this->nameHolder = nameHolder;
-    this->balance = 0;
+    this->numberOfAccounts++;
+}
+
+Account::~Account()
+{
+    numberOfAccounts--;
 }
 
 void Account::withdraw(float amount)
@@ -44,11 +51,8 @@ std::string Account::getAccountNumber()
 {
     return accountNumber;
 }
-std::string Account::getCpfHolder()
-{
-    return cpfHolder;
-}
-std::string Account::getNameHolder()
-{
-    return nameHolder;
-}
+
+ int Account::recoverNumberOfAccounts(){
+
+    return numberOfAccounts;
+ }
